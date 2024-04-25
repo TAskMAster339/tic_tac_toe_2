@@ -55,10 +55,9 @@ function App() {
     const prevElem = document.getElementById(lastId); //Блок, на который мы в прошлый раз кликнули(по умолчанию == NUll)
     const nextBox = document.getElementById(number_trans[blockID]); // Следующий Бокс  здесь sid[9](blockID) -- id следующего бокса(нажатой клетки)
     let typecolor = window.getComputedStyle(elem, null).backgroundColor; //Цвет заднего фона блока
-    let activeBox = window.getComputedStyle(Box, null).border; // Параметры границ бокса(9 блоков)
-
+    let activeBox = window.getComputedStyle(Box, null).borderColor; // Параметры границ бокса(9 блоков)  
     //проверка, что кликаем не на закрашенный блок и на бокс с синим контуром
-    if (typecolor === 'rgba(0, 0, 0, 0)' && activeBox === Box_border  && !IsWinner){ 
+    if ((typecolor === 'rgba(0, 0, 0, 0)') && (activeBox === marker)  && (!IsWinner)){ 
       if (lastColor === blue){ //определяем цвет, с помощью предыдущего, чтобы не перекрашивать блоки.
         typecolor = red;
         setLastColor(typecolor);
